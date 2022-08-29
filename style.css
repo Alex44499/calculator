@@ -5,119 +5,95 @@
 }
 
 body {
+  background: rgb(176, 240, 233);
+}
+
+
+
+.calculator{
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: rgb(176, 240, 233);
-  background-color: radial-gradient(
-    circle,
-    rgba(176, 240, 233, 1) 0%,
-    rgba(78, 159, 208, 1) 100%
-  );
+  position: relative;
 }
 
-.calculator-content {
-  display: flex;
+
+.content {
+  display: grid;
+  margin-top: 2em;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  width: 360px;
-  height: 440px;
-
-  font-family: 'Times New Roman', Times, serif;
-  font-size: x-large; 
-  /* background-color: #4158d0;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  ); */
-  background-color: #ff3cac;
-  background-image: linear-gradient(
-    225deg,
-    #ff3cac 0%,
-    #784ba0 50%,
-    #2b86c5 100%
-  );
-
-  border-radius: 10px;
-}
-
-.output {
-  display: flex;
-  justify-content: center;
-}
-
-.setOfButtons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  align-content: center;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  grid-template-columns: repeat(4,80px);
+  grid-template-rows:minmax(80px, auto)repeat(5,80px);
   
-    
+
+
+  background: rgba(0, 0,0,0.02);
+  box-shadow: 20px 20px 60px #bebebe
+  -20px -20px 60px #ffffff;
 }
 
-.display {
-  width: 230px;
-  height: 70px;
-  background: rgba(0, 0, 0, 0.6);
-  border: solid 1px black;
+.span{
+  grid-column: span 2;
+}
 
 
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.output{
+  grid-column: 1/5;
+  background: black;
   color: white;
-  border-radius: 10px;
-  margin: 5px;
-  }
-
-.button {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70px;
-  height: 70px;
-  border: solid 1px lawngreen;
-  transition-duration: 0.4s;
-  color: white;
-  border-radius: 10px;
-  margin: 5px;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  word-wrap:break-word;
+  word-break: break-all;
+  border-top-right-radius: 30px  ;
+  border-top-left-radius: 30px  ;
+  
+  
+}
+
+.equals{
+  border-bottom-right-radius: 30px  ;
+  background: orange;
+  color: #ffffff;
+}
+
+.operation,.delete,.clear{
+  color: orange;
+}
+
+
+.dot{
+  border-bottom-left-radius: 30px  ;
+}
+
+.previous{
+  font-size: 1.4rem;
+}
+
+
+.current{
+  font-size: 2rem;
+}
+
+.content button{
+  background: rgba(0, 0,0,);
+  border: 1px solid white;
+  outline: none;
+  transition: all.4s ease;
   font-weight: bold;
-  cursor: pointer;
+  font-size: larger;
 }
 
-.button:hover {
-  background-color: #4caf50;
-  color: white;
+.content button:hover{
+  background: rgba(0, 0,0, 0.06);
+  border: 0;
+  outline: none;
 }
 
-.button.yellow {
-  border: solid 1px yellow;
-}
 
-.button.yellow:hover {
-  background-color: yellow;
-  color: white;
-}
-
-.button.red {
-  border: solid 1px red;
-}
-
-.button.red:hover {
-  background-color: red;
-  color: white;
-}
-
-.button.blue {
-  border: solid 1px orange;
-}
-
-.button.blue:hover {
-  background-color: orange;
-  color: white;
-}
